@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class DotCom{
+public class Ship{
 	private ArrayList<String> locationCells;
 	private String name;
 	
