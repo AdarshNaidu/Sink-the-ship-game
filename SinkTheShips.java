@@ -1,16 +1,16 @@
 import java.util.*;
 
-public class DotComBust{
+public class SinkTheShips{
 	private GameHelper helper = new GameHelper();
-	private ArrayList<DotCom> dotComsList= new ArrayList<DotCom>();
+	private ArrayList<Ship> dotComsList= new ArrayList<Ship>();
 	private int numOfGuesses=0;
 	
 	private void setUpGame(){
-	DotCom one=new DotCom();
+	Ship one=new Ship();
 	one.setName("Santa Maria");
-	DotCom two=new DotCom();
+	Ship two=new Ship();
 	two.setName("USS Constitution");
-	DotCom three=new DotCom();
+	Ship three=new Ship();
 	three.setName("USS Arizona");
 	dotComsList.add(one);
 	dotComsList.add(two);
@@ -20,7 +20,7 @@ public class DotComBust{
 	System.out.println("Input should be row then column (ex:C4)\n");
 	System.out.println("All The Best\n");
 	
-	for(DotCom dotComToSet:dotComsList){
+	for(Ship dotComToSet:dotComsList){
 	ArrayList<String> newLocation=helper.placeDotCom(3);
 	dotComToSet.setLocationCells(newLocation);
 	}
@@ -37,7 +37,7 @@ public class DotComBust{
 	private void checkUserGuess(String userGuess){
 	numOfGuesses++;
 	String result="miss";
-	for(DotCom dotComToTest:dotComsList){
+	for(Ship dotComToTest:dotComsList){
 		result=dotComToTest.checkYourself(userGuess);
 		if(result.equals("hit")){
 			break;
@@ -58,7 +58,7 @@ public class DotComBust{
 	}}
 	
 public static void main(String[] args){
-DotComBust game=new DotComBust();
+SinkTheShips game=new SinkTheShips();
 game.setUpGame();
 game.startPlaying();
 }
